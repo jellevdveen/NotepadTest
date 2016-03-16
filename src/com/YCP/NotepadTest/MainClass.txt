@@ -9,13 +9,17 @@ public class MainClass {
 		private int playerTwoScore = 0;
 		private Scanner s = new Scanner();										//filenaam nog toevoegen
 		while (s.hasNext()) {
-			ArrayList<ArrayList<String>> hands = new ArrayList<ArrayList<String>>;
+			ArrayList<ArrayList<String>> hands = new ArrayList<ArrayList<String>()>();
 			
-			for (i = 0; i < 2; i++) {
-				ArrayList<String> currentHand
+			for (int i = 0; i < 2; i++) {
+				ArrayList<String> currentHand = new ArrayList<String>();
+				for (int j = 0; j < 5; j++) {
+					currentHand.add(s.next());
+				}
+				hands.add(currentHand);
 			}
 
-			if (checkWinningPlayer()) {
+			if (checkWinningPlayer(hands.get(0), hands.get(1))) {
 				playerOneScore++;
 			} else {
 				playerTwoScore++;
@@ -26,7 +30,7 @@ public class MainClass {
 	
 
 	private static boolean checkWinningPlayer(ArrayList<String> playerOneHand, ArrayList<String> playerTwoHand) {
-	
+		return true;	
 	}
 
 
