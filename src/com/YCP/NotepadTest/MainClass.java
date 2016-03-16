@@ -8,11 +8,11 @@ import java.io.FileNotFoundException;
 public class MainClass {
 	public static void main(String[] args) {
 		try {
-			private int playerOneScore = 0;
-			private int playerTwoScore = 0;
-			private Scanner s = new Scanner(new File("poker.txt"));										//filenaam nog toevoegen
+			int playerOneScore = 0;
+			int playerTwoScore = 0;
+			Scanner s = new Scanner(new File("poker.txt"));										//filenaam nog toevoegen
 			while (s.hasNext()) {
-				ArrayList<ArrayList<String>> hands = new ArrayList<ArrayList<String>()>();
+				ArrayList<ArrayList<String>> hands = new ArrayList<ArrayList<String>>();
 			
 				for (int i = 0; i < 2; i++) {
 					ArrayList<String> currentHand = new ArrayList<String>();
@@ -38,9 +38,20 @@ public class MainClass {
 	
 
 	private static boolean checkWinningPlayer(ArrayList<String> playerOneHand, ArrayList<String> playerTwoHand) {
-		return true;	
+		Hand handOne = new Hand(playerOneHand);
+		Hand handTwo = new Hand(playerTwoHand);
+		if (handOne.getValue() > handTwo.getValue()) {
+			return true;
+		} else if (handOne.getValue() < handTwo.getValue()) {
+			return false;
+		} else {
+			for (int i = 0; i < 5; i++) {
+				if (handOne.getHighCard(i) > handTwo.getHighCard(i)) {
+					return true;
+				} else if (handOne.getHighCard(i) < handTwo.getHighCard(i)) {
+					return false;
+				}
+			}
+		}
 	}
-
-
-
 }
