@@ -1,0 +1,34 @@
+package com.YCP.NotepadTest;
+
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class MainClass {
+	public static void main(String[] args) {
+		private int playerOneScore = 0;
+		private int playerTwoScore = 0;
+		private Scanner s = new Scanner();										//filenaam nog toevoegen
+		while (s.hasNext()) {
+			ArrayList<ArrayList<String>> hands = new ArrayList<ArrayList<String>>;
+			
+			for (i = 0; i < 2; i++) {
+				ArrayList<String> currentHand
+			}
+
+			if (checkWinningPlayer()) {
+				playerOneScore++;
+			} else {
+				playerTwoScore++;
+			}
+		}
+		System.out.println(playerOneScore + " - " + playerTwoScore);
+	}
+	
+
+	private static boolean checkWinningPlayer(ArrayList<String> playerOneHand, ArrayList<String> playerTwoHand) {
+	
+	}
+
+
+
+}
