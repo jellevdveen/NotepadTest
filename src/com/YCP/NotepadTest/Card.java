@@ -6,7 +6,9 @@ public class Card {
 
 	public Card(String s) {
 		suit = s.charAt(1);
+
 		char tester = s.charAt(0);
+
 		switch (tester) {
 			case '2': 	cardValue = 2;
 					break;
